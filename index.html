@@ -21,6 +21,7 @@
                 "scale": "showAll",
                 "quality": "high",
             }
+
             window.addEventListener("load", (event) => {
                 const ruffle = window.RufflePlayer.newest();
                 const player = ruffle.createPlayer();
@@ -33,6 +34,15 @@
                 player.style.width = "100vw"; 
                 player.style.height = "100vh";
             });
+
+            window.addEventListener("orientationchange", function(event) {
+                const player = document.getElementById("player");
+                if (player) {
+                    player.style.width = "100vw"; 
+                    player.style.height = "100vh";
+                }
+            });
+
         </script>
     </body>
 </html>
